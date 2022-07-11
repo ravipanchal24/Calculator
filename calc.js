@@ -77,6 +77,8 @@ function showResult(dipslayNumber)
         document.getElementById("resultDisplay").innerText = finalResult.toString();
         number2 = finalResult;
     }
+    document.getElementById("resultDisplay").style.transform="rotateX(360deg)";
+    document.getElementById("resultDisplay").style.transition="0.1s";
 }
 
 function clearAll()

@@ -23,7 +23,7 @@ body
    width: 369px;
 }
 
-#resultDisplay
+#resultDisplayBox
 {
     background-color: rgb(54, 51, 46);
     display: flex;
@@ -36,6 +36,11 @@ body
     border-top-left-radius: 50px;
     pointer-events: none;
     overflow: hidden;
+}
+
+#resultDipslay
+{
+    transition: ease-in-out;
 }
 
 #keys
