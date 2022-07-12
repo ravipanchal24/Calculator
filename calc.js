@@ -9,6 +9,10 @@ let operation = '';
 
 numbers.forEach( number => {
     number.addEventListener("click", (e)=> {
+        let currentDisplayValue = document.getElementById("resultDisplay").innerText;
+        if(currentDisplayValue === "Infinity" || currentDisplayValue === "NaN")
+        return;
+        
         let value = e.target.innerText;
         number2 += value;
         displayValue(value);
@@ -17,14 +21,14 @@ numbers.forEach( number => {
 
 operands.forEach( operand => {
     operand.addEventListener("click", (e)=> {
-        
-        let value = e.target.innerText;
+    
         let currentDisplayValue = document.getElementById("resultDisplay").innerText;
-        if(!currentDisplayValue.startsWith("-"))
-        {
-            if(currentDisplayValue.includes("+") || currentDisplayValue.includes("-") || currentDisplayValue.includes("x") || currentDisplayValue.includes("/"))
+        if(currentDisplayValue === "Infinity" || currentDisplayValue === "NaN")
+        return;
+        let value = e.target.innerText;
+        
+            if(currentDisplayValue.endsWith("+") || currentDisplayValue.endsWith("-") || currentDisplayValue.endsWith("x") || currentDisplayValue.endsWith("/"))
                 return;
-        }
         if(document.getElementById("resultDisplay").innerHTML === "Result" || document.getElementById("resultDisplay").innerHTML === "")
             return;
         number1 = number2;
@@ -77,8 +81,9 @@ function showResult(dipslayNumber)
         document.getElementById("resultDisplay").innerText = finalResult.toString();
         number2 = finalResult;
     }
-    document.getElementById("resultDisplay").style.transform="rotateX(360deg)";
     document.getElementById("resultDisplay").style.transition="0.1s";
+    document.getElementById("resultDisplay").style.transform="rotateX(360deg)";
+    
 }
 
 function clearAll()

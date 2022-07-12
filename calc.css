@@ -38,10 +38,6 @@ body
     overflow: hidden;
 }
 
-#resultDipslay
-{
-    transition: ease-in-out;
-}
 
 #keys
 {
